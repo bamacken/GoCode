@@ -1,3 +1,3 @@
-module github.com/bamacken/GoCode/tree/main
+module GoCode
 
 go 1.22.2
