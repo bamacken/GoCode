@@ -3,10 +3,9 @@ package sort
 func QuickSort(arr []int, low, high int) []int {
 	if low < high {
 		arr, p := partition(arr, low, high) // partition the array and get the pivot index
-		arr = QuickSort(arr, low, p-1)      // sort the left side of the pivot
-		arr = QuickSort(arr, p+1, high)     // sort the right side of the pivot
+		QuickSort(arr, low, p-1)            // sort the left side of the pivot
+		QuickSort(arr, p+1, high)           // sort the right side of the pivot
 	}
-
 	return arr
 }
 
@@ -24,8 +23,7 @@ func partition(arr []int, low int, high int) ([]int, int) {
 			i++
 		}
 	}
-	// we do this because we want to place the pivot at its correct position in the sorted array
-	// so that all elements to the left of the pivot are smaller than the pivot and all elements to the right of the pivot are greater than the pivot
+	// place the pivot so that elements to the left are smaller and right are larger
 	arr[i], arr[high] = arr[high], arr[i]
 	return arr, i
 }
