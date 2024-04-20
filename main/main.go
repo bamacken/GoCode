@@ -2,6 +2,7 @@ package main
 
 import (
 	easy "GoCode/algorithm/easy"
+	hard "GoCode/algorithm/hard"
 	medium "GoCode/algorithm/medium"
 	"fmt"
 )
@@ -14,11 +15,14 @@ func main() {
 	fmt.Println(easy.IsValid("{[]}"))
 	fmt.Println(easy.FindBuildings([]int{1, 3, 2, 4}))
 
-	nums1 := []int{1, 2, 3, 0, 0, 0}
-	nums2 := []int{2, 5, 6}
-	mergeArray(nums1, 3, nums2, 3)
+	nums1 := []int{1, 2}
+	nums2 := []int{3, 4}
+
+	hard.FindMedianSortedArrays(nums1, nums2)
 }
 
+// mergeArray(nums1, 3, nums2, 3) is the solution to the following
+// question: https://leetcode.com/problems/merge-sorted-array/
 func mergeArray(nums1 []int, m int, nums2 []int, n int) {
 	i := m - 1
 	j := n - 1
