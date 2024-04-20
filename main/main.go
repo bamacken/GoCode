@@ -1,8 +1,8 @@
 package main
 
 import (
-	easy "GoCode/level/easy"
-	medium "GoCode/level/medium"
+	easy "GoCode/algorithm/easy"
+	medium "GoCode/algorithm/medium"
 	"fmt"
 )
 
