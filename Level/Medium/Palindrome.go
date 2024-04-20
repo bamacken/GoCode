@@ -41,11 +41,9 @@ func LongestPalindromeBruteForce(s string) string {
 		for j := i + 1; j <= len(s); j++ {
 			curr = string(s[i:j])
 			str := reverseString(curr)
-			if curr == str {
-				if len(curr) > max {
-					max = len(curr)
-					results = curr
-				}
+			if curr == str && len(curr) > max {
+				max = len(curr)
+				results = curr
 			}
 		}
 	}
