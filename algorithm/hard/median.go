@@ -30,5 +30,3 @@ func FindMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 
 	return result
 }
-
-// sorts via merge sort

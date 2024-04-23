@@ -1,47 +1,33 @@
 package main
 
 import (
-	easy "GoCode/algorithm/easy"
-	hard "GoCode/algorithm/hard"
-	medium "GoCode/algorithm/medium"
+	linkedlist "GoCode/structure/linkedlist"
 	"fmt"
 )
 
-func main() {
-	fmt.Println("Hello, world!")
-	fmt.Println(medium.MyPow(2, 10))
-	fmt.Print(medium.LongestPalindrome("civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth"))
-	fmt.Println(medium.Reverse(1534236469))
-	fmt.Println(easy.IsValid("{[]}"))
-	fmt.Println(easy.FindBuildings([]int{1, 3, 2, 4}))
-
-	nums1 := []int{1, 2}
-	nums2 := []int{3, 4}
-
-	hard.FindMedianSortedArrays(nums1, nums2)
+type Person struct {
+	firstName string
+	lastName  string
 }
 
-// mergeArray(nums1, 3, nums2, 3) is the solution to the following
-// question: https://leetcode.com/problems/merge-sorted-array/
-func mergeArray(nums1 []int, m int, nums2 []int, n int) {
-	i := m - 1
-	j := n - 1
-	k := m + n - 1
+func NamePerson(first, last string) {
+	p := Person{first, last}
+	fmt.Println(p.firstName + " " + p.lastName)
+}
 
-	for i >= 0 && j >= 0 {
-		if nums1[i] > nums2[j] {
-			nums1[k] = nums1[i]
-			i--
-		} else {
-			nums1[k] = nums2[j]
-			j--
-		}
-		k--
-	}
+func main() {
+	fmt.Println("Hello, Linkedlist!")
 
-	for j >= 0 {
-		nums1[k] = nums2[j]
-		j--
-		k--
-	}
+	ll := linkedlist.NewLinkedList()
+
+	ll.Append(1)
+	ll.Append(2)
+	ll.Append(3)
+	ll.Append(4)
+	ll.Append(5)
+	ll.Append(6)
+	ll.Append(7)
+	ll.Append(8)
+	ll.Append(9)
+
 }
