@@ -1,0 +1,40 @@
+package tree
+
+import (
+	"testing"
+)
+
+func TestTrie(t *testing.T) {
+	trie := NewTrie()
+	trie.Insert("apple")
+	if !trie.Search("apple") {
+		t.Error("Expected to find 'apple'")
+	}
+	if trie.Search("app") {
+		t.Error("Did not expect to find 'app'")
+	}
+	if !trie.StartsWith("app") {
+		t.Error("Expected prefix 'app' to exist")
+	}
+	trie.Insert("app")
+	if !trie.Search("app") {
+		t.Error("Expected to find 'app'")
+	}
+}
+
+func ExampleTrie() {
+	trie := NewTrie()
+	trie.Insert("hello")
+	println(trie.Search("hello"))    // Output: true
+	println(trie.Search("hell"))     // Output: false
+	println(trie.StartsWith("hell")) // Output: true
+}
+
+func BenchmarkTrie(b *testing.B) {
+	trie := NewTrie()
+	for i := 0; i < b.N; i++ {
+		trie.Insert("test")
+		trie.Search("test")
+		trie.StartsWith("test")
+	}
+}
