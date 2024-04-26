@@ -1,4 +1,4 @@
-package structure
+package tree
 
 type TrieNode struct {
 	children [26]*TrieNode
